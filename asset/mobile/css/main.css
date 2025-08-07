@@ -1,0 +1,145 @@
+@charset "utf-8";
+
+/* reset */
+* {margin: 0;padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+em {font-style: normal; font-weight: bold;}
+br.mo {display: none;}
+button:hover {cursor: pointer;}
+body,h1,h2,h3,h4,h5,h6,li,a,textarea,button,strong,label,input,th  {font-family: 'Noto Sans KR', sans-serif;}
+
+/* LayOut */
+.wrap {min-width: 320px; overflow: hidden; position: relative;}
+
+/* header */
+header .bg {width: 100%; height: 100vh; background: rgba(0, 0, 0, 0.6); display: block; position: absolute; top: 0; left: 0;  z-index: 200; display: none;}
+header .innerHeader {background: #fff; height: 58px; line-height: 58px; position: relative; z-index: 100;}
+header .innerHeader .logo {text-align: center; height: 100%; margin-left: 15px; width: 190px;}
+header .innerHeader .logo a {display: block; width: 100%; height: 100%;}
+header .innerHeader .logo a img {height: auto; width: 100%;}
+/* gnbMo */
+header .innerHeader .gnbMoOpen {position: absolute; right: 0; top: 0;display: block; width: 55px; height: 58px; text-align: center; line-height: 58px; font-size: 15px; background: #404d2d url(../img/gnb.png) no-repeat center/50%;}
+.gnbMo {height: 100vh; width: 80%; max-width: 295px; background: #fff; position: absolute; right: -1000px; top: 0; z-index: 9999; transition: all 0.3s;}
+.gnbMo.on {right: 0; transition: all 0.5s;}
+.gnbMo .top {background: #404d2d; height: 58px; line-height: 58px; padding: 0 15px; box-sizing: border-box;}
+.gnbMo .top .goHome {display: block; width: 70%; margin: auto;}
+.gnbMo .top .goHome img {width: 100%;}
+.gnbMo .top .gnbMoClose {display: block; width: 58px; position: absolute; left: -58px; top: -3px;}
+.gnbMo .top .gnbMoClose img {width: 100%;}
+.gnbMo > ul {padding: 10px 0;}
+.gnbMo ul li a {display: block; width: 100%; border-bottom: 2px solid #404d2d; box-sizing: border-box; font-size: 15px; line-height:2.8; font-weight: bold; letter-spacing: -1px; color: #333; background: #fff;}
+.gnbMo ul li a sup {font-size: 13px; line-height: 0;}
+.gnbMo > ul > li > a {display: block; width: 84%; margin: auto; line-height: 2.8; font-size: 17px; color: #222; position: relative;}
+.gnbMo > ul > li > a:after {content: '-'; position: absolute; right: 10px; top: -9px; font-size: 60px; font-weight: 300; line-height: 1;color: #404d2d;}
+.gnbMo > ul > li > a.on { color: #404d2d;}
+.gnbMo > ul > li > a.on:after {content: '+'; font-size: 33px; top: 6px; font-weight: normal;}
+.gnbMo > ul > li > .inner { width: 85%; margin: auto;padding:5px 0;}
+.gnbMo > ul > li > .inner li a {position: relative; border-bottom: none; padding-left: 15px;}
+.gnbMo > ul > li > .inner li a:before {content: '·'; position: absolute; left: 1px; top: 3px; font-size: 20px; font-weight: bold; line-height: 1.8; color: #404d2d;}
+.gnbMo > ul > li > .inner {height: 0; overflow: hidden; transition: all 0.35s;}
+
+/* mainVisual */
+section.mainVisual {background: url(../img/mainVisualBg.png) no-repeat bottom 0 center/cover; padding: 40px 0;}
+section.mainVisual h2 {text-align: center; margin-bottom: 20px;}
+section.mainVisual h2 img {width: 60%;}
+section.mainVisual .iconBox {position: relative;}
+section.mainVisual .iconBox li {width: 40%;}
+section.mainVisual .iconBox li a {display: block;}
+section.mainVisual .iconBox li a img {width: 100%;}
+section.mainVisual .iconBox li:nth-child(2) {position: absolute; left: 9%; top:0;}
+section.mainVisual .iconBox li:nth-child(3) {position: absolute; right: 9%; top:0;}
+section.mainVisual .iconBox li:nth-child(4) {position: absolute; left: 50%; top:50%; margin-top: -18%; margin-left: -20%;}
+section.mainVisual .iconBox li:nth-child(5) {position: absolute; left: 9%; bottom:0;}
+section.mainVisual .iconBox li:nth-child(6) {position: absolute; right: 9%; bottom:0;}
+section.mainVisual .iconBox li:nth-child(1) {width: 100%; text-align: center;}
+section.mainVisual .iconBox li > img {width: 82%; opacity: 0; z-index: -1px;}
+section.mainVisual > a {width: 50%; margin: 25px auto 0; display: block; color: #fff; background: #6b8331; text-align: center; font-size: 20px; letter-spacing: -1px; font-weight: 300; padding: 10px 0; border-radius: 50px;}
+section.mainVisual > a span {transform: scaleX(0.5); display: inline-block; margin-left: 3px;}
+
+/* section.card */
+section.card {background: url(../img/cardBg.png) no-repeat center/cover; padding: 80px 0;}
+section.card h2 {text-align: center; margin-bottom: 20px;}
+section.card h2 img {width: 70%;}
+section.card ul {width: 95%; margin: 30px auto 0; overflow: hidden;}
+section.card ul li {width: 32.6%; float: left; margin-right: 1%;}
+section.card ul li:last-child {margin-right: 0}
+section.card ul li img {width: 100%;}
+
+/* section.cf */
+.video-container { 
+    margin: 20px auto 0;
+    padding-bottom: 50.7%; 
+    max-width: 90%; 
+    height: 0;  
+    position: relative;
+    overflow: hidden;
+} 
+.video-container iframe, 
+.video-container object,
+.video-container embed {
+    margin: 0;
+    padding: 0;  
+    width: 100%; 
+    height: 100%;
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+}
+section.cf {background: url(../img/cfBg.png) no-repeat center/cover; padding: 70px 0;}
+section.cf h2 {text-align: center; font-size: 25px; color: #493936;}
+section.cf h2 span {color: #404d2d;}
+
+/* footer */
+footer {text-align: center;}
+footer .footerBox {background: #2d2d2b; color: #888; padding: 30px 0; font-size: 10px; font-weight: 300;    padding-bottom: 80px;}
+footer .footerBox ul {width: 85%; margin: 0 auto 20px; border: 1px solid #999; overflow: hidden;}
+footer .footerBox ul li {width: 33.3333%; height: 30px; line-height: 30px; float: left; border-right: 1px solid #999; box-sizing: border-box;}
+footer .footerBox ul li:last-child {border-right: none;}
+footer .footerBox ul li a {display: block; width: 100%; height: 100%; color: #fff;}
+footer .footerBox h4 {color: #eee;}
+footer .footerBox h4 span {color: #edffbd;}
+footer .footerBox p {line-height: 1.8;}
+footer .footerBox p.color {color: #eee;line-height: 1.6; margin-top: 10px;}
+footer .footerBox p.color em {color: #222; background: #eee; padding: 0 6px; border-radius: 5px; margin-right: 5px; font-weight: normal; display: inline-block;}
+
+@media screen and (max-width:320px) {
+	section.mainVisual {padding: 30px 0;}
+	section.card {padding: 60px 0;}
+	footer .footerBox h4 {letter-spacing: -1px; font-size: 11px;}
+}
+
+/* .floatArea */
+.floatArea.on{bottom:0;z-index:9999;}
+.floatArea .deem{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7)}
+.floatArea .footer{position:fixed;bottom:-314px;left:0;width:100%;background:#eee}
+.floatArea .footer h3{text-align: center;  background: linear-gradient( to bottom, #567215, #495c23 );}
+.floatArea .footer h3>img{width:100%;max-width:400px;}
+.floatArea .footer .form{width:100%;margin:0 auto; background:#eee}
+.floatArea .footer .form>div{max-width:720px;margin:0 auto}
+.floatArea .footer .form>div .top{position:relative;width:92%;margin:0 auto; padding: 14px 0 0;}
+.floatArea .footer .form>div .top .trans{display:block;content:"";width:100%;height:100px;background:transparent;position:absolute;top:0;left:0}
+.floatArea .footer .form>div .top span{display:block; margin:7px auto}
+.submitBtn {width:55%;display:block; margin:7px auto;max-width:200px;margin:15px auto 30px;}
+.floatArea .footer .form>div .top input{width:100%;padding:0 0 0 10px;height:40px;line-height:40px;font-size:15px; font-weight:300;  color:#000;border:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;border-radius: 4px; box-sizing: border-box}
+.floatArea .footer .form>div .top span.select_wrap select{width:100%;height:40px;line-height:40px;font-size:15px;color:#888;border:none; background:url(../img/selectbox.png) no-repeat 95% 50% #fff;-webkit-appearance:none;-moz-appearance:none;appearance:none;border-radius: 4px; padding:0 0 0 10px; box-sizing: border-box;}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+.floatArea .footer .form>div .top span.select_wrap select{background:#fff}
+} 
+.floatArea .footer .form>div .btm{position:relative;width:92%;margin:15px auto 20px} 
+.floatArea .footer .form>div .btm .btn_agree{z-index:100;font-family: 'Noto Sans KR', sans-serif; position:absolute;top:32px;right:0px;display:block;width:60px;height:26px;line-height:26px;text-align:center;font-size:12px;border-radius:4px;background:#5f5f5f;color:#fff;}
+.btn_agree2{z-index:100;font-family: 'Noto Sans KR', sans-serif;position:absolute;top:63px;right:0px;display:block;width:60px;height:26px;line-height:26px;text-align:center;font-size:12px;border-radius:4px;background:#5f5f5f;color:#fff;}
+.floatArea .footer .form>div .btm label{display:block;height:28px;line-height:25px;}
+.floatArea .btn_close{display:none;position:absolute;top:10px;right:13px;width:36px;height:36px}
+.floatArea .btn_close>img{width:36px;height:36px}
+/* checkbox */
+.checks {position: relative; margin: 20px auto 25px; letter-spacing: -1px;} 
+.checks input[type="checkbox"] {position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip:rect(0,0,0,0); border: 0 } 
+.checks input[type="checkbox"] + label { display: inline-block; position: relative; padding-left: 35px; cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; font-size: 15px;vertical-align: middle; color: #555; margin-bottom: 6px;} 
+.checks input[type="checkbox"] + label:before {content: ''; position: absolute; left: 0; top: 0px; width: 24px; height: 24px; line-height: 23px;  text-align: center; background: #fff; border: 1px solid #cecece; border-radius: 4px;} 
+.checks input[type="checkbox"] + label:active:before, .checks input[type="checkbox"]:checked + label:active:before { box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1); } 
+.checks input[type="checkbox"]:checked + label:before {font-size: 18px; font-weight: bold; content: '\2714';  color: #6b8331; background: #fff; border-color: #cecece;}
